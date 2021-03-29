@@ -1,30 +1,52 @@
 /**
  * Author: PJ Duimstra
  * Date: 3.29.21
- *
+ * Defines the Square object.
  */
 public class Square extends Shape implements Area{
     private double length;
 
+    /**
+     * Default constructor for the Square object.
+     * @param length the side length of the square.
+     * @param name the name of the square.
+     */
     public Square(double length, String name) {
         super(name);
         this.length = length;
     }
 
+    /**
+     * Getter method for the length of a Square object.
+     * @return the side length of a given Square object.
+     */
     public double getLength() {
         return length;
     }
 
+    /**
+     * Override method for the getArea method.
+     * @return the area of a square (l^2)
+     */
     @Override
     public double getArea() {
         return Math.pow(length, 2);
     }
 
+    /**
+     * Override method for the getName method.
+     * @return the name of the square.
+     */
     @Override
     public String getName() {
         return name;
     }
 
+    /**
+     * Override for the equals method.
+     * @param o the object being compared.
+     * @return the boolean representation of the comparison.
+     */
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Square)) {
@@ -36,6 +58,10 @@ public class Square extends Shape implements Area{
                this.length == length;
     }
 
+    /**
+     * Overrides the toString method
+     * @return a formatted string showing the details of the square object.
+     */
     @Override
     public String toString() {
         return String.format("Square [Name: %s, Length: %.1f]", this.getName(), length);
