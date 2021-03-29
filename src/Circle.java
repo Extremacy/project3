@@ -1,13 +1,18 @@
+/**
+ * Author: PJ Duimstra
+ * Date: 3.29.21
+ *
+ */
 public class Circle extends Shape implements Area {
     private double radius;
-
-    public double getRadius() {
-        return radius;
-    }
 
     public Circle(double radius, String name) {
         super(name);
         this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     @Override

@@ -1,9 +1,18 @@
+/**
+ * Author: PJ Duimstra
+ * Date: 3.29.21
+ *
+ */
 public class Square extends Shape implements Area{
     private double length;
 
     public Square(double length, String name) {
         super(name);
         this.length = length;
+    }
+
+    public double getLength() {
+        return length;
     }
 
     @Override

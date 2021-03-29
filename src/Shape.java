@@ -1,3 +1,8 @@
+/**
+ * Author: PJ Duimstra
+ * Date: 3.29.21
+ *
+ */
 public abstract class Shape {
     protected String name;
 
