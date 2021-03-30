@@ -1,19 +1,34 @@
+import java.security.InvalidParameterException;
+
 /**
  * Author: PJ Duimstra
  * Date: 3.29.21
  * Defines the Square object.
  */
-public class Square extends Shape implements Area{
+public class Square extends Shape implements Area {
     private double length;
 
     /**
      * Default constructor for the Square object.
+     *
      * @param length the side length of the square.
-     * @param name the name of the square.
+     * @param name   the name of the square.
      */
     public Square(double length, String name) {
         super(name);
-        this.length = length;
+        this.setLength(length);
+    }
+
+    /**
+     * Setter method for length.
+     * @param length the length of the square (must be >= 0)
+     */
+    public void setLength(double length) {
+        if (length >= 0) {
+            this.length = length;
+        } else {
+            throw new InvalidParameterException("The length entered is invalid (" + length + ")");
+        }
     }
 
     /**
@@ -54,8 +69,8 @@ public class Square extends Shape implements Area{
         }
         Square s = (Square) o;
 
-        return super.equals(s) &&
-               this.length == length;
+        return s.getName().equals(name) &&
+               s.getLength() == length;
     }
 
     /**

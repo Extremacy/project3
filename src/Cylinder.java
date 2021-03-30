@@ -18,6 +18,14 @@ public class Cylinder extends Circle implements Volume{
     }
 
     /**
+     * Getter method for height.
+     * @return the height of a given Cylinder object.
+     */
+    public double getHeight() {
+        return height;
+    }
+
+    /**
      * Implementation of the volume method
      * @return the volume of a cylinder (π * r^2 * h)
      */
@@ -38,7 +46,7 @@ public class Cylinder extends Circle implements Volume{
         }
         Cylinder c = (Cylinder) o;
         return super.equals(c) &&
-               this.height == height;
+               c.height == height;
     }
 
     /**

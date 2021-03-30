@@ -1,3 +1,5 @@
+import java.security.InvalidParameterException;
+
 /**
  * Author: PJ Duimstra
  * Date: 3.29.21
@@ -13,7 +15,19 @@ public class Circle extends Shape implements Area {
      */
     public Circle(double radius, String name) {
         super(name);
-        this.radius = radius;
+        this.setRadius(radius);
+    }
+
+    /**
+     * Setter method for radius .
+     * @param radius the radius of the square (must be >= 0)
+     */
+    public void setRadius(double radius) {
+        if (radius >= 0) {
+            this.radius = radius;
+        } else {
+            throw new InvalidParameterException("The radius entered is invalid (" + radius + ")");
+        }
     }
 
     /**
@@ -54,7 +68,8 @@ public class Circle extends Shape implements Area {
         }
 
         Circle c = (Circle) o;
-        return super.equals(c) && c.radius == radius;
+        return c.getName().equals(name)
+                && c.getRadius() == radius;
     }
 
     /**
